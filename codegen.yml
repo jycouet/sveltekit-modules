@@ -1,0 +1,20 @@
+schema: './src/lib/modules/**/typedefs/*.gql'
+overwrite: true
+# documents:
+#   - './packages/client/src/graphql/**/*.gql'
+generates:
+  ./src/lib/modules/:
+    preset: graphql-modules
+    presetConfig:
+      baseTypesPath: ../graphql/_gen/graphql.ts # Where to create the complete schema types!
+      filename: _gen/module-types.ts # Where to create each module types!
+    plugins:
+      - typescript
+      - typescript-resolvers
+  # ./packages/client/src/_gen/graphql.ts:
+  #   plugins:
+  #     - typescript
+  #     - typescript-operations
+  #     - svelte-apollo
+  #   config:
+  #     clientPath: 'src/graphql/apollo-client'

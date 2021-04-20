@@ -1,4 +1,4 @@
 type Version {
-  releaseVersion: String!
-  releaseCreatedAtUtc: String!
+	releaseVersion: String!
+	releaseCreatedAtUtc: String!
 }

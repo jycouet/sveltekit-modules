@@ -6,7 +6,7 @@ generates:
   ./src/lib/modules/:
     preset: graphql-modules
     presetConfig:
-      baseTypesPath: ../graphql/_gen/graphql.ts # Where to create the complete schema types!
+      baseTypesPath: ../_gen/graphql.ts # Where to create the complete schema types!
       filename: _gen/module-types.ts # Where to create each module types!
     plugins:
       - typescript
@@ -18,3 +18,32 @@ generates:
   #     - svelte-apollo
   #   config:
   #     clientPath: 'src/graphql/apollo-client'
+
+config:
+  # use "import type" instead of "import"
+  useTypeImports: true
+  # turn enums into types
+  enumsAsTypes: true
+
+  omitOperationSuffix: true
+  dedupeOperationSuffix: true
+  exportFragmentSpreadSubTypes: true
+  experimentalFragmentVariables: true
+  addUnderscoreToArgsType: true
+
+  # onlyOperationTypes: true
+  preResolveTypes: true
+
+  # namingConvention: keep
+
+  scalars:
+    UnsignedInt: number
+    URL: string
+    JSON: any # string | number | boolean | null | Array<Scalars['JSON']> | Scalars['JSONObject']
+    JSONObject: Record<string, any>
+    Date: string
+    DateTime: string
+
+hooks:
+  afterAllFileWrite:
+    - prettier --write

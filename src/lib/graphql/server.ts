@@ -1,14 +1,11 @@
 import { versionModule } from '$lib/modules/version';
 import { createApplication } from 'graphql-modules';
 
-const application = createApplication({
-  // middlewares: {
-  //   '*': {
-  //     '*': [whiteListAuthMiddleware],
-  //   },
-  // },
-  modules: [
-    versionModule,
-    
-  ],
+export const application = createApplication({
+	middlewares: {
+		'*': {
+			'*': []
+		}
+	},
+	modules: [versionModule]
 });

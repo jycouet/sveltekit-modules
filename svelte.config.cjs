@@ -23,7 +23,7 @@ module.exports = {
 			},
 			optimizeDeps: {
 				exclude: Object.keys(pkg.dependencies || {}).filter((d) => !['graphql'].includes(d)),
-				include: ['graphql']
+				include: ['graphql', 'globby', 'unixify']
 			},
 			ssr: {
 				// Until https://github.com/vitejs/vite/issues/2579

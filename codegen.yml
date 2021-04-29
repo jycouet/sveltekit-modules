@@ -6,8 +6,8 @@ generates:
   ./src/lib/modules/:
     preset: graphql-modules
     presetConfig:
-      importBaseTypesFrom: '../../_gen/global-types'
-      baseTypesPath: _gen/global-types.ts # Where to create the complete schema types!
+      importBaseTypesFrom: '../../../graphql/_gen/global-types'
+      baseTypesPath: ../graphql/_gen/global-types.ts # Where to create the complete schema types!
       filename: _gen/module-types.ts # Where to create each module types!
     plugins:
       - typescript

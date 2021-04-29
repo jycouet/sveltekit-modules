@@ -1,4 +1,4 @@
-import { VersionModule } from '../_gen/module-types';
+import type { VersionModule } from '../_gen/module-types';
 
 export const resolvers: VersionModule.Resolvers = {
 	Mutation: {

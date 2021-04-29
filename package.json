@@ -10,8 +10,7 @@
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write .",
 		"reset": "git clean -xdf",
-		"update": "npm i -g npm-check-updates && ncu -u -p yarn && yarn",
-		"modgen": "tsc -p ./tools/modulegen/tsconfig.json && node ./tools/modulegen/build/modulegen.js"
+		"update": "npm i -g npm-check-updates && ncu -u -p yarn && yarn"
 	},
 	"devDependencies": {
 		"@graphql-codegen/cli": "1.21.3",
@@ -39,10 +38,9 @@
 		"tslib": "2.2.0",
 		"typescript": "4.2.4",
 		"vite": "2.2.1",
-		"yargs": "17.0.0-candidate.13"
+		"@graphql-tools/load-files": "6.3.2"
 	},
 	"dependencies": {
-		"@graphql-tools/load-files": "^6.3.2",
 		"@urql/core": "2.0.0",
 		"@urql/exchange-request-policy": "0.1.1",
 		"@urql/svelte": "1.2.1",

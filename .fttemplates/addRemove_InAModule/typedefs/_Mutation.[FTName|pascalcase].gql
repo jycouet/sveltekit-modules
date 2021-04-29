@@ -1,0 +1,4 @@
+type Mutation {
+	add[FTName|pascalcase]: String
+	remove[FTName|pascalcase]: String
+}

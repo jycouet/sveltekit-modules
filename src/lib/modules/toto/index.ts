@@ -4,7 +4,7 @@ import { resolvers as _Query } from './resolvers/_Query';
 import { resolvers as _Mutation } from './resolvers/_Mutation';
 import * as fs from 'fs';
 
-__dirname = path.resolve(path.dirname(''));
+const __dirname = path.resolve(path.dirname(''));
 
 export const versionModule = createModule({
 	id: 'version-module',

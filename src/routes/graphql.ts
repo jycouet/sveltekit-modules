@@ -4,9 +4,6 @@ import { getGraphQLParameters } from 'graphql-helix/dist/get-graphql-parameters.
 import { processRequest } from 'graphql-helix/dist/process-request.js';
 import { renderGraphiQL } from 'graphql-helix/dist/render-graphiql.js';
 import { shouldRenderGraphiQL } from 'graphql-helix/dist/should-render-graphiql.js';
-import { createSchema, defaultQuery } from '../graphql/schema';
-
-const schemaPromise = createSchema();
 
 const respond = async (request): Promise<Response> => {
 	// Workaround for a bug with body parsing in SvelteKit
@@ -15,7 +12,7 @@ const respond = async (request): Promise<Response> => {
 	if (shouldRenderGraphiQL(request)) {
 		return {
 			body: renderGraphiQL({
-				defaultQuery
+				//defaultQuery
 			}),
 			headers: { 'Content-Type': 'text/html' },
 			status: 200

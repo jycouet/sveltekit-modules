@@ -1,0 +1,6 @@
+query GetVersion {
+	version {
+		releaseVersion
+		releaseCreatedAtUtc
+	}
+}

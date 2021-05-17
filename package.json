@@ -4,14 +4,15 @@
 	"license": "MIT",
 	"scripts": {
 		"gen": "graphql-codegen --config codegen.yml",
+		"postgen": "yarn gen-ext",
+		"gen-ext": "node tools/graphql-modules-codegen-ext",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",
 		"start": "svelte-kit start",
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write .",
 		"reset": "git clean -xdf",
-		"update": "npm i -g npm-check-updates && ncu -u -p yarn && yarn",
-		"gen-ext": "node tools/graphql-modules-codegen-ext"
+		"update": "npm i -g npm-check-updates && ncu -u -p yarn && yarn"
 	},
 	"devDependencies": {
 		"@graphql-codegen/cli": "1.21.3",

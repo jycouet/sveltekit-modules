@@ -10,7 +10,8 @@
 		"lint": "prettier --check . && eslint --ignore-path .gitignore .",
 		"format": "prettier --write .",
 		"reset": "git clean -xdf",
-		"update": "npm i -g npm-check-updates && ncu -u -p yarn && yarn"
+		"update": "npm i -g npm-check-updates && ncu -u -p yarn && yarn",
+		"gen-ext": "node tools/graphql-modules-codegen-ext"
 	},
 	"devDependencies": {
 		"@graphql-codegen/cli": "1.21.3",

@@ -56,3 +56,6 @@ moduleNames.forEach((moduleName) => {
 		}
 	);
 });
+
+console.log('\x1b[32m', '✔', '\x1b[0m', 'Merge resolvers');
+console.log(` 💡 Did you add all modules in 'createApplication'?`);

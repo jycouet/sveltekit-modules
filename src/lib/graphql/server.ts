@@ -1,6 +1,7 @@
 import { versionModule } from '$lib/modules/version';
 import { createApplication } from 'graphql-modules';
 import { userModule } from '$lib/modules/user';
+import { chatModule } from '../modules/chat';
 
 export const application = createApplication({
 	middlewares: {
@@ -8,5 +9,5 @@ export const application = createApplication({
 			'*': []
 		}
 	},
-	modules: [versionModule, userModule]
+	modules: [versionModule, userModule, chatModule]
 });

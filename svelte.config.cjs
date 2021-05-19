@@ -22,7 +22,8 @@ module.exports = {
 				dedupe: ['svelte', 'urql']
 			},
 			optimizeDeps: {
-				exclude: Object.keys(pkg.dependencies || {}).filter((d) => !['graphql'].includes(d)),
+				// exclude: Object.keys(pkg.dependencies || {}).filter((d) => !['graphql'].includes(d)),
+				exclude: ['@urql/svelte'],
 				include: ['graphql', 'globby', 'unixify', '@graphql-tools/load-files']
 			},
 			ssr: {

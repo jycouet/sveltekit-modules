@@ -1,4 +1,0 @@
-type Chat {
-	id: String
-	name: String
-}

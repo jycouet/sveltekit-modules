@@ -1,7 +1,7 @@
-schema: './src/lib/modules/**/typedefs/*.gql'
+schema: ./src/lib/modules/**/typedefs/*.gql
 overwrite: true
-# documents:
-#   - './packages/client/src/graphql/**/*.gql'
+documents:
+  - ./src/lib/modules/**/graphql/*.gql
 generates:
   ./src/lib/modules/:
     preset: graphql-modules
@@ -12,6 +12,13 @@ generates:
     plugins:
       - typescript
       - typescript-resolvers
+  ./src/lib/graphql/_gen/graphqlClient.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-urql
+    config:
+      withHooks: false
 
   # ./packages/client/src/_gen/graphql.ts:
   #   plugins:

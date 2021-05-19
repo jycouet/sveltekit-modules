@@ -1,5 +1,0 @@
-query Get[FTName|pascalcase]($id: String!) {
-	[FTName|camelcase](id: $id) {
-		...[FTName|camelcase]
-	}
-}

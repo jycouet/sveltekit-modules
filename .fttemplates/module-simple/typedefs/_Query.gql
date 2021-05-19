@@ -1,4 +1,4 @@
 extend type Query {
-	[FTName|camelcase](id: String!): [FTName|pascalcase]
-	[FTName|camelcase]s: [[FTName|pascalcase]!]!
+	<FTName|camelcase>(id: String!): <FTName|pascalcase>
+	<FTName|camelcase>s: [<FTName|pascalcase>!]!
 }

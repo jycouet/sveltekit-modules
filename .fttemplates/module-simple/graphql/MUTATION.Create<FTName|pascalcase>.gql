@@ -1,0 +1,5 @@
+mutation Create<FTName|pascalcase>($name: String!) {
+	create<FTName|pascalcase>(name: $name) {
+		...<FTName|camelcase>
+	}
+}

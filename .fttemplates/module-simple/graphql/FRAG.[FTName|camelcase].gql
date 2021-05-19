@@ -1,4 +1,0 @@
-fragment [FTName|camelcase] on [FTName|pascalcase] {
-	id
-	name
-}

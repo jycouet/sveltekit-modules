@@ -1,6 +1,7 @@
 {
-	"name": "jyc",
+	"name": "sveltekit-modules",
 	"version": "0.0.1",
+	"private": true,
 	"license": "MIT",
 	"scripts": {
 		"gen": "graphql-codegen --config codegen.yml",

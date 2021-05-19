@@ -1,6 +1,31 @@
-after \_newModule
+# SvelteKit & Modules & GraphQL
 
-=> Add the new module to the server.ts
-=> when you add new resolvers, you need to add them in the index.ts of the resolvers folder.
+> Leverage the power of **modules** in combination with [SvelteKit](https://kit.svelte.dev/) & [GraphQL](https://graphql.org/).
 
-npx degit github:user/repo/directory/sub-directory#branch-name <folder-name>
+## 🚀 Backend
+
+- [graphql-helix](https://github.com/contrawork/graphql-helix)
+- [graphql-modules](https://www.graphql-modules.com/)
+
+## 🎨 Frontend
+
+- [graphql urql](https://formidable.com/open-source/urql/docs/basics/svelte/)
+
+## 🔧 Tooling
+
+- [graphql-code-generator](https://www.graphql-code-generator.com/)
+- [JYC Share tips](https://github.com/jycouet/share-tips)
+  - [fttemplates](https://marketplace.visualstudio.com/items?itemName=Huuums.vscode-fast-folder-structure)
+
+---
+
+## ▶️ How to run it?
+
+<br/>
+
+```bash
+yarn          # install dependencies
+yarn gen      # code gen all graphql modules, backend, frontend
+yarn gen-mr   # generate a file for all resolvers (tmp)
+yarn dev      # starts the website
+```

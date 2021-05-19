@@ -14,6 +14,7 @@
 	import type { Exact } from '../lib/graphql/_gen/global-types';
 	import type { GetUsersQuery } from '../lib/graphql/_gen/graphqlClient';
 	import { CreateUserDocument, GetUsersDocument } from '../lib/graphql/_gen/graphqlClient';
+	import UserList from '../lib/modules/user/ui/UserList.svelte';
 
 	export let users: OperationStore<
 		GetUsersQuery,
@@ -42,11 +43,7 @@
 <main>
 	<h4>Users...</h4>
 
-	<ul>
-		{#each $users.data.users as user}
-			<li>{user.id} - {user.name}</li>
-		{/each}
-	</ul>
+	<UserList users={$users.data.users} />
 
 	<!-- {#if $usersQuery.error}
 		<p>Oh no... {$usersQuery.error}</p>

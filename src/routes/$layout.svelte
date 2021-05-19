@@ -71,4 +71,13 @@
 	setClient(client);
 </script>
 
+<h3>Menu</h3>
+<ul>
+	<li><a href="./graphql">GraphQL</a></li>
+	<li />
+	<li><a href="./user">User</a></li>
+	<li><a href="./channel">Channel</a></li>
+</ul>
+
+<h3>Page</h3>
 <slot />

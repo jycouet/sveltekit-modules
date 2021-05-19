@@ -6,16 +6,16 @@ export const resolvers: [FTName|pascalcase]Module.Resolvers = {
 			console.log(`args.id`, args.id);
 			return {
 				id: args.id,
-				name: 'JYC'
+				name: `[FTName|constantcase]_${args.id}`
 			};
 		},
 		[FTName|camelcase]s: async (_root, _args, { injector }: GraphQLModules.Context) => {
 			return [{
 				id: '007',
-				name: 'JYC_7'
+				name: `[FTName|constantcase]_${7}`
 			},{
 				id: '008',
-				name: 'JYC_8'
+				name: `[FTName|constantcase]_${8}`
 			}];
 		}
 	}

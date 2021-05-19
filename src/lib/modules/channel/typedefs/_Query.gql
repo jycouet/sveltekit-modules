@@ -1,0 +1,4 @@
+extend type Query {
+	channel(id: String!): Channel
+	channels: [Channel!]!
+}

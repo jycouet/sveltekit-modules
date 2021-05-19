@@ -1,5 +1,6 @@
 import { createApplication } from 'graphql-modules';
 import { userModule } from '$lib/modules/user';
+import { channelModule } from '../modules/channel';
 
 export const application = createApplication({
 	middlewares: {
@@ -7,5 +8,5 @@ export const application = createApplication({
 			'*': []
 		}
 	},
-	modules: [userModule]
+	modules: [userModule, channelModule]
 });

@@ -5,19 +5,19 @@ export const resolvers: UserModule.Resolvers = {
 		user: async (_root, args, { injector }: GraphQLModules.Context) => {
 			console.log(`args.id`, args.id);
 			return {
-				id: '007',
-				name: 'JYC'
+				id: args.id,
+				name: `USER_${args.id}`
 			};
 		},
 		users: async (_root, _args, { injector }: GraphQLModules.Context) => {
 			return [
 				{
 					id: '007',
-					name: 'JYC'
+					name: `USER_${7}`
 				},
 				{
 					id: '008',
-					name: 'JYC'
+					name: `USER_${8}`
 				}
 			];
 		}

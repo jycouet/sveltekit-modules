@@ -1,8 +1,11 @@
 <script context="module">
-	import { get, readable } from 'svelte/store';
-	import { operationStore } from '@urql/svelte';
 	import { browser, dev } from '$app/env';
 	import { createClient } from '$lib/graphql/client';
+	import { operationStore, setClient } from '@urql/svelte';
+	import { get, readable } from 'svelte/store';
+	import { MenuMapping } from '../lib/helper/MenuMapping';
+	import Menu from '../lib/ui/Menu.svelte';
+	import PageTitle from '../lib/ui/PageTitle.svelte';
 
 	/**
 	 * @type {import('@sveltejs/kit').Load}
@@ -61,12 +64,6 @@
 </script>
 
 <script>
-	import { setClient } from '@urql/svelte';
-	import { page } from '$app/stores';
-	import { MenuMapping } from '../lib/helper/MenuMapping';
-	import Menu from '../lib/ui/Menu.svelte';
-	import PageTitle from '../lib/ui/PageTitle.svelte';
-
 	/**
 	 * @type {import('@urql/svelte').Client}
 	 */

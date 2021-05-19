@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { User } from '../../../graphql/_gen/graphqlClient';
+	import type { UserFragment } from '../../../graphql/_gen/graphqlClient';
 
-	export let user: Pick<User, 'id' | 'name'>;
+	export let user: UserFragment;
 </script>
 
 <li>{user.id} - {user.name}</li>

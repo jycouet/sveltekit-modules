@@ -9,29 +9,18 @@
 </script>
 
 <script lang="ts">
-	import type { OperationStore } from '@urql/svelte';
-	import type { Exact } from '../lib/graphql/_gen/global-types';
-	import type { GetChannelsQuery } from '../lib/graphql/_gen/graphqlClient';
 	import { GetChannelsDocument } from '../lib/graphql/_gen/graphqlClient';
+	import ChannelAdd from '../lib/modules/channel/ui/ChannelAdd.svelte';
+	import ChannelList from '../lib/modules/channel/ui/ChannelList.svelte';
+	import type { GetChannelsStore } from '../lib/modules/channel/ui/GetChannelsStoreType';
 
-	export let channels: OperationStore<
-		GetChannelsQuery,
-		Exact<{
-			[key: string]: never;
-		}>
-	>;
+	export let channels: GetChannelsStore;
 </script>
-
-<svelte:head>
-	<title>SvelteKit - GraphQL</title>
-</svelte:head>
 
 <main>
 	<h4>Channels...</h4>
 
-	<ul>
-		{#each $channels.data.channels as channel}
-			<li>{channel.id} - {channel.name}</li>
-		{/each}
-	</ul>
+	<ChannelList channels={$channels.data.channels} />
+
+	<ChannelAdd bind:channels />
 </main>

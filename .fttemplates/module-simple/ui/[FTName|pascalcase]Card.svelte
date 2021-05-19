@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { [FTName|pascalcase] } from '../../../graphql/_gen/graphqlClient';
+	import type { [FTName|pascalcase]Fragment } from '../../../graphql/_gen/graphqlClient';
 
-	export let [FTName|camelcase]: Pick<[FTName|pascalcase], 'id' | 'name'>;
+	export let [FTName|camelcase]: [FTName|pascalcase]Fragment;
 </script>
 
 <li>{[FTName | camelcase].id} - {[FTName | camelcase].name}</li>

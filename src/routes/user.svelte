@@ -9,62 +9,18 @@
 </script>
 
 <script lang="ts">
-	import type { OperationStore } from '@urql/svelte';
-	import { mutation, operationStore, query } from '@urql/svelte';
-	import type { Exact } from '../lib/graphql/_gen/global-types';
-	import type { GetUsersQuery } from '../lib/graphql/_gen/graphqlClient';
-	import { CreateUserDocument, GetUsersDocument } from '../lib/graphql/_gen/graphqlClient';
+	import { GetUsersDocument } from '../lib/graphql/_gen/graphqlClient';
+	import type { GetUsersStore } from '../lib/modules/user/ui/GetUsersStoreType';
+	import UserAdd from '../lib/modules/user/ui/UserAdd.svelte';
 	import UserList from '../lib/modules/user/ui/UserList.svelte';
 
-	export let users: OperationStore<
-		GetUsersQuery,
-		Exact<{
-			[key: string]: never;
-		}>
-	>;
-
-	//let usersQuery = query(users);
-	let newName = '';
-
-	const createUserStore = operationStore(CreateUserDocument);
-	const createUserMutation = mutation(createUserStore);
-
-	async function addUser() {
-		const result = await createUserMutation({ name: newName });
-		$users.data.users = [...$users.data.users, result.data.createUser];
-		newName = '';
-	}
+	export let users: GetUsersStore;
 </script>
-
-<svelte:head>
-	<title>SvelteKit - GraphQL</title>
-</svelte:head>
 
 <main>
 	<h4>Users...</h4>
 
 	<UserList users={$users.data.users} />
 
-	<!-- {#if $usersQuery.error}
-		<p>Oh no... {$usersQuery.error}</p>
-	{:else if $usersQuery.fetching}
-		<p>Loading...</p>
-	{:else}
-		<ul>
-			{#each $usersQuery.data.users as user}
-				<li>{user.id} - {user.name}</li>
-			{/each}
-		</ul>
-	{/if} -->
-
-	<form>
-		<input type="text" bind:value={newName} />
-		<button on:click|preventDefault={addUser}>Add</button>
-	</form>
-	{#if $createUserStore.data}
-		<div>
-			User: "{$createUserStore.data.createUser.id} - {$createUserStore.data.createUser.name}"
-			created!
-		</div>
-	{/if}
+	<UserAdd bind:users />
 </main>

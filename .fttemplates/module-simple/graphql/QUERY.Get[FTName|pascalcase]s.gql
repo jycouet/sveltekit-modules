@@ -1,6 +1,5 @@
 query Get[FTName|pascalcase]s {
 	[FTName|camelcase]s {
-		id
-		name
+		...[FTName|camelcase]
 	}
 }

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { [FTName|pascalcase] } from '../../../graphql/_gen/graphqlClient';
+	import type { [FTName|pascalcase]Fragment } from '../../../graphql/_gen/graphqlClient';
 	import [FTName|pascalcase]Card from './[FTName|pascalcase]Card.svelte';
 
-	export let [FTName|camelcase]s: Array<{ __typename?: '[FTName|pascalcase]' } & Pick<[FTName|pascalcase], 'id' | 'name'>>;
+	export let [FTName|camelcase]s: [FTName|pascalcase]Fragment[];
 </script>
 
 <ul>

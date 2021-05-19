@@ -70,6 +70,10 @@
 	setClient(client);
 </script>
 
+<svelte:head>
+	<title>SvelteKit - Modules</title>
+</svelte:head>
+
 <h3>Menu</h3>
 <ul>
 	<li><a href="./graphql" target="_blank">GraphQL</a></li>

@@ -1,0 +1,5 @@
+mutation CreateChannel($name: String!) {
+	createChannel(name: $name) {
+		...channel
+	}
+}

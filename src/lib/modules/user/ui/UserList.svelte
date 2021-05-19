@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { User } from '../../../graphql/_gen/graphqlClient';
+	import type { UserFragment } from '../../../graphql/_gen/graphqlClient';
 	import UserCard from './UserCard.svelte';
 
-	export let users: Array<{ __typename?: 'User' } & Pick<User, 'id' | 'name'>>;
+	export let users: UserFragment[];
 </script>
 
 <ul>

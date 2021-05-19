@@ -5,6 +5,7 @@
 	"license": "MIT",
 	"scripts": {
 		"gen": "graphql-codegen --config codegen.yml",
+		"postgen": "yarn gen-mr",
 		"gen-mr": "node tools/graphql-codegen-modules-merge-resolver",
 		"dev": "svelte-kit dev",
 		"build": "svelte-kit build",

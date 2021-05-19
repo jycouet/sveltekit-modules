@@ -1,9 +1,9 @@
-const sveltePreprocess = require('svelte-preprocess');
-const node = require('@sveltejs/adapter-node');
-const pkg = require('./package.json');
+import sveltePreprocess from 'svelte-preprocess';
+import node from '@sveltejs/adapter-node';
+// const pkg = require('./package.json');
 
 /** @type {import('@sveltejs/kit').Config} */
-module.exports = {
+const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: sveltePreprocess(),
@@ -23,13 +23,16 @@ module.exports = {
 			},
 			optimizeDeps: {
 				// exclude: Object.keys(pkg.dependencies || {}).filter((d) => !['graphql'].includes(d)),
-				// exclude: ['@urql/svelte']
+				exclude: ['@urql/svelte', '@urql/exchange-request-policy', '@urql/devtools']
 				// include: ['graphql', 'globby', 'unixify', '@graphql-tools/load-files']
 			},
 			ssr: {
 				// Until https://github.com/vitejs/vite/issues/2579
 				// noExternal: Object.keys(pkg.dependencies || {})
+				// noExternal: ['@urql/svelte']
 			}
 		}
 	}
 };
+
+export default config;

@@ -1,4 +1,4 @@
-# SvelteKit & Modules & GraphQL
+# SvelteKit - Modules
 
 > Leverage the power of **modules** in combination with [SvelteKit](https://kit.svelte.dev/) & [GraphQL](https://graphql.org/).
 

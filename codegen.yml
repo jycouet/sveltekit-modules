@@ -3,6 +3,7 @@ overwrite: true
 documents:
   - ./src/lib/modules/**/graphql/*.gql
 generates:
+  # graphql-modules
   ./src/lib/modules/:
     preset: graphql-modules
     presetConfig:
@@ -12,47 +13,15 @@ generates:
     plugins:
       - typescript
       - typescript-resolvers
+  # graphql-client
   ./src/lib/graphql/_gen/graphqlClient.ts:
     plugins:
       - typescript
       - typescript-operations
-      # - typescript-urql
       - typed-document-node
-    config:
-      withHooks: false
-
-  # ./packages/client/src/_gen/graphql.ts:
-  #   plugins:
-  #     - typescript
-  #     - typescript-operations
-  #     - svelte-apollo
-  #   config:
-  #     clientPath: 'src/graphql/apollo-client'
 
 config:
-  # use "import type" instead of "import"
   useTypeImports: true
-  # turn enums into types
-  # enumsAsTypes: true
-
-  # omitOperationSuffix: true
-  # dedupeOperationSuffix: true
-  # exportFragmentSpreadSubTypes: true
-  # experimentalFragmentVariables: true
-  # addUnderscoreToArgsType: true
-
-  # onlyOperationTypes: true
-  # preResolveTypes: true
-
-  # namingConvention: keep
-
-  # scalars:
-  #   UnsignedInt: number
-  #   URL: string
-  #   JSON: any # string | number | boolean | null | Array<Scalars['JSON']> | Scalars['JSONObject']
-  #   JSONObject: Record<string, any>
-  #   Date: string
-  #   DateTime: string
 
 hooks:
   afterAllFileWrite:

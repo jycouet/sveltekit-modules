@@ -5,6 +5,15 @@ import { processRequest } from 'graphql-helix/dist/process-request.js';
 import { renderGraphiQL } from 'graphql-helix/dist/render-graphiql.js';
 import { shouldRenderGraphiQL } from 'graphql-helix/dist/should-render-graphiql.js';
 
+export const defaultQuery = `# Try out SvelteKit - Modules:
+query GetUsers{
+	users {
+		id
+		name
+	}
+}
+`;
+
 const respond = async (request): Promise<Response> => {
 	// Workaround for a bug with body parsing in SvelteKit
 	if (typeof request.body === 'string') request.body = JSON.parse(request.body);
@@ -12,7 +21,7 @@ const respond = async (request): Promise<Response> => {
 	if (shouldRenderGraphiQL(request)) {
 		return {
 			body: renderGraphiQL({
-				//defaultQuery
+				defaultQuery
 			}),
 			headers: { 'Content-Type': 'text/html' },
 			status: 200

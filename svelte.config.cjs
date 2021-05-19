@@ -19,16 +19,16 @@ module.exports = {
 
 		vite: {
 			resolve: {
-				dedupe: ['svelte', 'urql']
+				// dedupe: ['svelte', 'urql']
 			},
 			optimizeDeps: {
 				// exclude: Object.keys(pkg.dependencies || {}).filter((d) => !['graphql'].includes(d)),
-				exclude: ['@urql/svelte'],
-				include: ['graphql', 'globby', 'unixify', '@graphql-tools/load-files']
+				// exclude: ['@urql/svelte']
+				// include: ['graphql', 'globby', 'unixify', '@graphql-tools/load-files']
 			},
 			ssr: {
 				// Until https://github.com/vitejs/vite/issues/2579
-				noExternal: Object.keys(pkg.dependencies || {})
+				// noExternal: Object.keys(pkg.dependencies || {})
 			}
 		}
 	}

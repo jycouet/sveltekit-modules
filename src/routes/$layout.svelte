@@ -9,7 +9,6 @@
 	 */
 	export async function load({ fetch, context }) {
 		const client = await createClient({
-			// url: 'https://swapi-graphql.netlify.app/.netlify/functions/index',
 			url: 'http://localhost:3000/graphql',
 			// Pass in the fetch from sveltekit to have access to serialized requests during hydration
 			fetch,
@@ -73,7 +72,7 @@
 
 <h3>Menu</h3>
 <ul>
-	<li><a href="./graphql">GraphQL</a></li>
+	<li><a href="./graphql" target="_blank">GraphQL</a></li>
 	<li />
 	<li><a href="./user">User</a></li>
 	<li><a href="./channel">Channel</a></li>

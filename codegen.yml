@@ -16,7 +16,8 @@ generates:
     plugins:
       - typescript
       - typescript-operations
-      - typescript-urql
+      # - typescript-urql
+      - typed-document-node
     config:
       withHooks: false
 

@@ -8,22 +8,29 @@
 	}
 </script>
 
-<script>
+<script lang="ts">
+	import type { OperationStore } from '@urql/svelte';
 	import { mutation, operationStore, query } from '@urql/svelte';
+	import type { Exact } from '../lib/graphql/_gen/global-types';
+	import type { GetUsersQuery } from '../lib/graphql/_gen/graphqlClient';
 	import { CreateUserDocument, GetUsersDocument } from '../lib/graphql/_gen/graphqlClient';
 
-	/**
-	 * @type {import('@urql/svelte').OperationStore}
-	 */
-	export let users;
-	let usersQuery = query(users);
+	export let users: OperationStore<
+		GetUsersQuery,
+		Exact<{
+			[key: string]: never;
+		}>
+	>;
+
+	//let usersQuery = query(users);
 	let newName = '';
 
 	const createUserStore = operationStore(CreateUserDocument);
 	const createUserMutation = mutation(createUserStore);
 
 	async function addUser() {
-		await createUserMutation({ name: newName });
+		const result = await createUserMutation({ name: newName });
+		$users.data.users = [...$users.data.users, result.data.createUser];
 		newName = '';
 	}
 </script>
@@ -33,7 +40,13 @@
 </svelte:head>
 
 <main>
-	{#if $usersQuery.error}
+	<ul>
+		{#each $users.data.users as user}
+			<li>{user.id} - {user.name}</li>
+		{/each}
+	</ul>
+
+	<!-- {#if $usersQuery.error}
 		<p>Oh no... {$usersQuery.error}</p>
 	{:else if $usersQuery.fetching}
 		<p>Loading...</p>
@@ -43,13 +56,16 @@
 				<li>{user.id} - {user.name}</li>
 			{/each}
 		</ul>
-	{/if}
+	{/if} -->
 
-	<input type="text" bind:value={newName} />
-	<button type="button" on:click={addUser}>Add</button>
+	<form>
+		<input type="text" bind:value={newName} />
+		<button on:click|preventDefault={addUser}>Add</button>
+	</form>
 	{#if $createUserStore.data}
 		<div>
-			User"{$createUserStore.data.createUser.id}" created!
+			User: "{$createUserStore.data.createUser.id} - {$createUserStore.data.createUser.name}"
+			created!
 		</div>
 	{/if}
 </main>

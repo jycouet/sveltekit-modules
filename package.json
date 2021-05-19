@@ -17,6 +17,7 @@
 		"@graphql-codegen/cli": "1.21.3",
 		"@graphql-codegen/graphql-modules-preset": "1.2.4",
 		"@graphql-codegen/introspection": "1.18.1",
+		"@graphql-codegen/typed-document-node": "1.18.5",
 		"@graphql-codegen/typescript": "1.21.1",
 		"@graphql-codegen/typescript-document-nodes": "1.17.10",
 		"@graphql-codegen/typescript-operations": "1.17.15",

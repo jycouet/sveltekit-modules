@@ -17,10 +17,6 @@
 	export let channels: GetChannelsStore;
 </script>
 
-<main>
-	<h4>Channels...</h4>
+<ChannelList channels={$channels.data.channels} />
 
-	<ChannelList channels={$channels.data.channels} />
-
-	<ChannelAdd bind:channels />
-</main>
+<ChannelAdd bind:channels />

@@ -13,14 +13,14 @@
 	import type { GetUsersStore } from '../lib/modules/user/ui/GetUsersStoreType';
 	import UserAdd from '../lib/modules/user/ui/UserAdd.svelte';
 	import UserList from '../lib/modules/user/ui/UserList.svelte';
+	import Card from '../lib/ui/Card.svelte';
+	import CardList from '../lib/ui/CardList.svelte';
 
 	export let users: GetUsersStore;
 </script>
 
-<main>
-	<h4>Users...</h4>
+<UserList users={$users.data.users} />
 
-	<UserList users={$users.data.users} />
+<!-- <CardList list={$users.data.users} /> -->
 
-	<UserAdd bind:users />
-</main>
+<UserAdd bind:users />

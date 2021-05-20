@@ -3,9 +3,23 @@
 
 	export let name;
 	export let isBlue = false;
+	export let selected = false;
+
+	function click() {
+		selected = !selected;
+	}
 </script>
 
-<div draggable="true" in:scale={{ duration: 1000 }} class:isBlue class="card">{name}</div>
+<div
+	draggable="true"
+	in:scale={{ duration: 1000 }}
+	class:selected
+	class:isBlue
+	class="card"
+	on:click={click}
+>
+	{name}
+</div>
 
 <style>
 	.card {
@@ -22,5 +36,13 @@
 
 	.isBlue {
 		border: #40b3ff solid 1px;
+	}
+
+	.selected {
+		background-color: #ff40007e;
+	}
+
+	.isBlue.selected {
+		background-color: #40b3ff81;
 	}
 </style>

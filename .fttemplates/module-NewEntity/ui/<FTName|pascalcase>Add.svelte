@@ -17,7 +17,7 @@
 
 <form>
 	<input type="text" bind:value={newName} />
-	<button on:click|preventDefault={add<FTName|pascalcase>}>Add</button>
+	<button on:click|preventDefault={add<FTName|pascalcase>}>Create</button>
 </form>
 {#if $create<FTName|pascalcase>Store.data}
 	<div>

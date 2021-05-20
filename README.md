@@ -16,6 +16,7 @@
 - [graphql-code-generator](https://www.graphql-code-generator.com/)
 - [JYC Share tips](https://github.com/jycouet/share-tips)
   - [fttemplates](https://marketplace.visualstudio.com/items?itemName=Huuums.vscode-fast-folder-structure)
+- [svelte-add](https://github.com/svelte-add/svelte-add)
 
 ---
 

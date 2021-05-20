@@ -1,4 +1,5 @@
 export const MenuMapping = {
 	'/user': 'User',
-	'/channel': 'Channel'
+	'/channel': 'Channel',
+	'/userInChannel': 'User in Channel'
 };

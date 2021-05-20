@@ -21,6 +21,10 @@ function getFiles(source) {
 function getFileWOTS(str) {
 	return str.replace('.ts', '');
 }
+
+function getFileWODots(str) {
+	return getFileWOTS(str).replace('.', '');
+}
 /* End   - Functions Helpers*/
 
 const moduleNames = getDirectories(modulePath);
@@ -36,7 +40,7 @@ moduleNames.forEach((moduleName) => {
 	let data = [];
 	resolversFiles.forEach((resolver) => {
 		data.push(
-			`import { resolvers as ${getFileWOTS(resolver)} } from '../resolvers/${getFileWOTS(
+			`import { resolvers as ${getFileWODots(resolver)} } from '../resolvers/${getFileWOTS(
 				resolver
 			)}';`
 		);
@@ -44,7 +48,7 @@ moduleNames.forEach((moduleName) => {
 	data.push(``);
 	data.push(`export const resolvers = [`);
 	resolversFiles.forEach((resolver) => {
-		data.push(`  ${getFileWOTS(resolver)},`);
+		data.push(`  ${getFileWODots(resolver)},`);
 	});
 	data.push(`];`);
 

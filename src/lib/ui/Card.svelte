@@ -2,9 +2,10 @@
 	import { scale } from 'svelte/transition';
 
 	export let name;
+	export let isBlue = false;
 </script>
 
-<div transition:scale={{ duration: 1000 }} class="card">{name}</div>
+<div draggable="true" in:scale={{ duration: 1000 }} class:isBlue class="card">{name}</div>
 
 <style>
 	.card {
@@ -16,5 +17,10 @@
 		height: 150px;
 		align-items: center;
 		justify-content: center;
+		box-shadow: 2px 2px 2px #999;
+	}
+
+	.isBlue {
+		border: #40b3ff solid 1px;
 	}
 </style>

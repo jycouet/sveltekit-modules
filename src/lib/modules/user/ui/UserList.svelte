@@ -12,8 +12,8 @@
 	})}
 />
 
-<ul>
+<!-- <ul>
 	{#each users as user}
 		<UserCard {user} />
 	{/each}
-</ul>
+</ul> -->

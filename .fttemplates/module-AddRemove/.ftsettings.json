@@ -1,0 +1,4 @@
+{
+	"omitParentDirectory": true,
+	"customVariables": ["OnWhatEntity=>channel"]
+}

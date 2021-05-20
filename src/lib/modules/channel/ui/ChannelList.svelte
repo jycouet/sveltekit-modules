@@ -6,14 +6,15 @@
 	export let channels: ChannelFragment[];
 </script>
 
-<!-- <CardList
+<CardList
 	list={channels.map((c) => {
 		return { name: c.name };
 	})}
-/> -->
+	isBlue
+/>
 
-<ul>
+<!-- <ul>
 	{#each channels as channel}
 		<ChannelCard {channel} />
 	{/each}
-</ul>
+</ul> -->

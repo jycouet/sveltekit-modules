@@ -2,6 +2,12 @@
 
 > Leverage the power of **modules** in combination with [SvelteKit](https://kit.svelte.dev/) & [GraphQL](https://graphql.org/).
 
+---
+
+You want a small intro? Check [the video](https://www.youtube.com/watch?v=Xwf2To0euqw).
+
+---
+
 ## 🚀 Backend
 
 - [graphql-helix](https://github.com/contrawork/graphql-helix)

@@ -2,8 +2,8 @@ import type { <OnWhatEntity|pascalcase>Module } from '../_gen/module-types';
 
 export const resolvers: <OnWhatEntity|pascalcase>Module.Resolvers = {
 	Mutation: {
-		add<FTName|pascalcase>On<OnWhatEntity|pascalcase>: async (_root, args, { injector }: GraphQLModules.Context) => {
-			console.log(`TODO: add<FTName|pascalcase>On<OnWhatEntity|pascalcase>`);
+		add<FTName|pascalcase>In<OnWhatEntity|pascalcase>: async (_root, args, { injector }: GraphQLModules.Context) => {
+			console.log(`TODO: add<FTName|pascalcase>In<OnWhatEntity|pascalcase>`);
 			return {
 				id: `${args.id<OnWhatEntity|pascalcase>}`,
 				name: '<OnWhatEntity|pascalcase>Name...',
@@ -15,8 +15,8 @@ export const resolvers: <OnWhatEntity|pascalcase>Module.Resolvers = {
 				]
 			};
 		},
-		remove<FTName|pascalcase>On<OnWhatEntity|pascalcase>: async (_root, _args, { injector }: GraphQLModules.Context) => {
-			console.log(`TODO: remove<FTName|pascalcase>On<OnWhatEntity|pascalcase>`);
+		remove<FTName|pascalcase>In<OnWhatEntity|pascalcase>: async (_root, _args, { injector }: GraphQLModules.Context) => {
+			console.log(`TODO: remove<FTName|pascalcase>In<OnWhatEntity|pascalcase>`);
 			return true;
 		}
 	}

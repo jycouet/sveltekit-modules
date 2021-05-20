@@ -1,4 +1,0 @@
-extend type Mutation {
-	add<FTName|pascalcase>On<OnWhatEntity|pascalcase>(id<FTName|pascalcase>: String!, id<OnWhatEntity|pascalcase>: String!): <OnWhatEntity|pascalcase>
-	remove<FTName|pascalcase>On<OnWhatEntity|pascalcase>(id<FTName|pascalcase>: String!, id<OnWhatEntity|pascalcase>: String!): Boolean
-}

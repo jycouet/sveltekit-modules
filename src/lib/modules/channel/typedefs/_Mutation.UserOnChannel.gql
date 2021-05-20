@@ -1,4 +1,0 @@
-extend type Mutation {
-	addUserOnChannel(idUser: String!, idChannel: String!): Channel
-	removeUserOnChannel(idUser: String!, idChannel: String!): Boolean
-}

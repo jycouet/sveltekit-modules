@@ -13,8 +13,8 @@ query GetUsers{
 	}
 }
 
-mutation AddUserOnChannel($idUser: String!, $idChannel: String!) {
-  addUserOnChannel(idUser: $idUser, idChannel: $idChannel){
+mutation AddUserInChannel($idUser: String!, $idChannel: String!) {
+  addUserInChannel(idUser: $idUser, idChannel: $idChannel){
     id
     name
     users{

@@ -26,3 +26,5 @@ config:
 hooks:
   afterAllFileWrite:
     - prettier --write
+  onWatchTriggered:
+    - yarn gen-mr #Test with Dotan

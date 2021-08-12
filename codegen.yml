@@ -19,12 +19,10 @@ generates:
       - typescript
       - typescript-operations
       - typed-document-node
+      - urql-svelte-operations-store
 
 config:
   useTypeImports: true
-
 hooks:
   afterAllFileWrite:
     - prettier --write
-  onWatchTriggered:
-    - yarn gen-mr #Test with Dotan

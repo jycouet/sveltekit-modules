@@ -9,12 +9,11 @@
 </script>
 
 <script lang="ts">
-	import { GetChannelsDocument } from '../lib/graphql/_gen/graphqlClient';
+	import { GetChannelsDocument, GetChannelsQueryStore } from '../lib/graphql/_gen/graphqlClient';
 	import ChannelAdd from '../lib/modules/channel/ui/ChannelAdd.svelte';
 	import ChannelList from '../lib/modules/channel/ui/ChannelList.svelte';
-	import type { GetChannelsStore } from '../lib/modules/channel/ui/GetChannelsStoreType';
 
-	export let channels: GetChannelsStore;
+	export let channels: GetChannelsQueryStore;
 </script>
 
 <ChannelList channels={$channels.data.channels} />

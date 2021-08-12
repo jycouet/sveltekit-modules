@@ -10,14 +10,17 @@
 </script>
 
 <script lang="ts">
-	import { GetChannelsDocument, GetUsersDocument } from '../lib/graphql/_gen/graphqlClient';
+	import {
+		GetChannelsDocument,
+		GetChannelsQueryStore,
+		GetUsersDocument,
+		GetUsersQueryStore
+	} from '../lib/graphql/_gen/graphqlClient';
 	import ChannelList from '../lib/modules/channel/ui/ChannelList.svelte';
-	import type { GetChannelsStore } from '../lib/modules/channel/ui/GetChannelsStoreType';
-	import type { GetUsersStore } from '../lib/modules/user/ui/GetUsersStoreType';
 	import UserList from '../lib/modules/user/ui/UserList.svelte';
 
-	export let users: GetUsersStore;
-	export let channels: GetChannelsStore;
+	export let users: GetUsersQueryStore;
+	export let channels: GetChannelsQueryStore;
 </script>
 
 <UserList users={$users.data.users} />

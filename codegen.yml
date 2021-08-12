@@ -25,4 +25,5 @@ config:
   useTypeImports: true
 hooks:
   afterAllFileWrite:
-    - prettier --write
+    # - prettier --write
+    - yarn gen-mr # script is happening, but logs are not showing!

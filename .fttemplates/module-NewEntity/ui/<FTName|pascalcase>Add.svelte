@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { mutation, operationStore } from '@urql/svelte';
-	import { Create<FTName|pascalcase>Document } from '../../../graphql/_gen/graphqlClient';
+	import { Create<FTName|pascalcase>Document } from '$lib/graphql/_gen/graphqlClient';
 
 	export let <FTName|camelcase>s;
 	let newName = '';

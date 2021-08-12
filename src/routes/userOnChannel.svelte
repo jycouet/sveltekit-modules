@@ -10,12 +10,8 @@
 </script>
 
 <script lang="ts">
-	import {
-		GetChannelsDocument,
-		GetChannelsQueryStore,
-		GetUsersDocument,
-		GetUsersQueryStore
-	} from '../lib/graphql/_gen/graphqlClient';
+	import { GetChannelsDocument, GetUsersDocument } from '$lib/graphql/_gen/graphqlClient';
+	import type { GetChannelsQueryStore, GetUsersQueryStore } from '$lib/graphql/_gen/graphqlClient';
 	import ChannelList from '../lib/modules/channel/ui/ChannelList.svelte';
 	import UserList from '../lib/modules/user/ui/UserList.svelte';
 

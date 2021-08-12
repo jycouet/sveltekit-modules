@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { mutation, operationStore } from '@urql/svelte';
-	import { CreateChannelDocument } from '../../../graphql/_gen/graphqlClient';
+	import { CreateChannelDocument } from '$lib/graphql/_gen/graphqlClient';
 
 	export let channels;
 	let newName = '';

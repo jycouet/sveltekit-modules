@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { ChannelFragment } from '../../../graphql/_gen/graphqlClient';
+	import type { ChannelFragment } from '$lib/graphql/_gen/graphqlClient';
 
 	export let channel: ChannelFragment;
 </script>

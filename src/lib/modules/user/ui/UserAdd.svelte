@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { mutation, operationStore } from '@urql/svelte';
-	import { CreateUserDocument } from '../../../graphql/_gen/graphqlClient';
+	import { CreateUserDocument } from '$lib/graphql/_gen/graphqlClient';
 
 	export let users;
 	let newName = '';
